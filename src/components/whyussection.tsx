@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { Tweet } from 'react-tweet'
 export const Whyus = () => {
+
     return (
         <>
         <div className="flex flex-col justify-center h-[vh] ">
@@ -11,7 +13,6 @@ export const Whyus = () => {
         <div className="text-3xl text-gray-800 mr-100 pt-4">
           ChaiCode
         </div>
-
       
         <div className="flex flex-row items-center gap-20 pt-2 pr-5 text-lg font-semibold ">
           <div className="relative inline-flex items-center font-semibold text-gray-600 hover:text-gray-900 hover:cursor-pointer">
@@ -43,7 +44,7 @@ export const Whyus = () => {
      <div className="w-60 border rounded-md mt-10 ml-155 py-2 px-0 font-opensans">
        <p>Trusted by 1.5M code learners</p>
      </div>
-   <div className='flex flex-col justify-center ml-48'>
+   <div className='flex flex-col justify-center ml-56'>
    {/* <div className="w-8xl  pl-5 mt-3 "> */}
       <div className='font-stretch-150% text-7xl'>Consistency and Community </div>
       <div className='mt-8 font-medium text-3xl '>An unmatched learning experience for coding courses</div>
@@ -75,8 +76,16 @@ export const Whyus = () => {
 </div>
 
 <div>
-  <p>hjhjh</p>
-  <p>dfdfd</p>
+  <div className='ml-56 mt-20'>
+    <p className='text-2xl'>Love that we get from our community</p>
+    <p className='text-4xl mt-3 font-medium'>Tweet Love</p>
+  </div>
+
+<div className='dark'>
+<Tweet id="1910306109539414088" />
+
+</div>
+
 </div>
     </div>
         </>
