@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import { Tweet } from 'react-tweet'
+
 export const Whyus = () => {
 
     return (
@@ -41,7 +41,7 @@ export const Whyus = () => {
       </div>
     </nav>
 
-     <div className="w-60 border rounded-md mt-10 ml-155 py-2 px-0 font-opensans">
+     <div className="w-60 border rounded-md mt-10 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110">
        <p>Trusted by 1.5M code learners</p>
      </div>
    <div className='flex flex-col justify-center ml-56'>
@@ -60,7 +60,7 @@ export const Whyus = () => {
 
 
   
-  <div className="flex w-110 gap-4 h-20 py-4 pl-6 mt-12 ml-130 text-4xl border-2 rounded-lg border-amber-400 ">
+  <div className="flex w-110 gap-4 h-20 py-4 pl-6 mt-12 ml-130 text-4xl border-2 rounded-lg border-amber-400 shadow-lg transition-all duration-700 hover:scale-110">
       <p>Check all Live Cohorts</p>
       <div className="flex items-center gap-2">
   <span className="relative flex h-3 w-3">
@@ -71,7 +71,7 @@ export const Whyus = () => {
 
   </div>
 
-  <div className='ml-115 pt-4'>
+  <div className='ml-115 pt-4 '>
 <ReactPlayer width={550} height={300} controls={true} playing={true} light={true} url='https://youtu.be/RDagRV7ueMI?si=uckG58qqU_Y5BxMT' />
 </div>
 
@@ -82,7 +82,7 @@ export const Whyus = () => {
   </div>
 
 <div className='dark'>
-<Tweet id="1910306109539414088" />
+
 
 </div>
 
