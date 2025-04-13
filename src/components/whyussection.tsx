@@ -45,11 +45,10 @@ export const Whyus = () => {
               duration: 0.4,
               scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
-        
         className="flex flex-col justify-center h-[vh] ">
-    <nav className="w-fit border-b bg-white ">
+  <div>
+    <div className=" w-fit fixed border-b-2 bg-white  ">
       <div className=" px-6 flex  justify-around pb-2">
-        
 
         <div className="text-3xl text-gray-800 mr-100 pt-4">
           ChaiCode
@@ -74,16 +73,24 @@ export const Whyus = () => {
 
         
         <div className=''>
-          <button className="px-4 bg-slate-100 rounded-lg hover:bg-slate-200 hover:cursor-pointer ml-80 pr-10 mt-6">
+          <motion.button
+          whileHover={{
+            // scale : 1.1
+          }}
+            whileTap={{
+              scale : [0.90,1.1]
+            }} 
+           className=" bg-slate-100 rounded-lg hover:bg-slate-200 hover:cursor-pointer ml-80 mt-6">
             Login
-          </button>
+          </motion.button>
         </div>
 
       </div>
-    </nav>
+    </div>
+    </div>
  
 
-     <div className="w-60 border rounded-md mt-20 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110">
+     <div className="w-60 border rounded-md mt-35 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110 ">
        <p>Trusted by 1.5M code learners</p>
      </div>
    <div className='flex flex-col justify-center ml-56'>
@@ -99,7 +106,6 @@ export const Whyus = () => {
         <p> Group projects and so many other activities to keep you on track. </p> 
      
      </div>
-
 
   
   <div className="flex w-110 gap-4 h-20 py-4 pl-6 mt-12 ml-130 text-4xl border-2 rounded-lg border-amber-400 shadow-lg transition-all duration-700 hover:scale-110">
