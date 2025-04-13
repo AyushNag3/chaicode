@@ -8,44 +8,20 @@ import {
   } from "@/components/ui/carousel"
   import { motion } from 'motion/react'
   import { useState , useRef, useEffect} from 'react'
+  import { UseElementVisibility } from '@/hooks/use-element-visibility'
 export const TwitterCard = () => {
 
-  const [isVisible, setIsVisible] = useState(false)
-    const ballRef = useRef(null)
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          // Update state based on whether the ball is visible
-          entries.forEach((entry) => {
-            setIsVisible(entry.isIntersecting)
-          })
-        },
-        {
-          threshold: 0.2, // Trigger when at least 20% of the element is visible
-        },
-      )
-      // Start observing the ball element
-      if (ballRef.current) {
-        observer.observe(ballRef.current)
-      }
-
-      return () => {
-        if (ballRef.current) {
-          observer.unobserve(ballRef.current)
-        }
-      }
-    }, [])
-
+  const [isVisible1, setIsVisible1] = UseElementVisibility()
+  const [isVisible2, setIsVisible2] = UseElementVisibility()
     return (
         <>
    <motion.div 
    
-   ref={ballRef}
+   ref={isVisible1}
    initial={{ opacity: 0, scale: 0 }}
-   animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+   animate={setIsVisible1 ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
    transition={{
-     duration: 0.4,
+     duration: 2,
      scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
    }}
    
@@ -67,11 +43,11 @@ export const TwitterCard = () => {
   
   <motion.div 
   
-  ref={ballRef}
+  ref={isVisible2}
   initial={{ opacity: 0, scale: 0 }}
-  animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+  animate={setIsVisible2 ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
   transition={{
-    duration: 0.4,
+    duration: 1,
     scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
   }}
 

@@ -2,49 +2,20 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { motion } from 'motion/react'
 import { useState , useRef, useEffect} from 'react'
+import { UseElementVisibility } from '@/hooks/use-element-visibility'
+
 
 
 export const Whyus = () => {
-
-  const [isVisible, setIsVisible] = useState(false)
-    const ballRef = useRef(null)
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          // Update state based on whether the ball is visible
-          entries.forEach((entry) => {
-            setIsVisible(entry.isIntersecting)
-          })
-        },
-        {
-          threshold: 0.2, // Trigger when at least 20% of the element is visible
-        },
-      )
-      // Start observing the ball element
-      if (ballRef.current) {
-        observer.observe(ballRef.current)
-      }
-
-      return () => {
-        if (ballRef.current) {
-          observer.unobserve(ballRef.current)
-        }
-      }
-    }, [])
-
-
+    const [ball1, isball1Visible] = UseElementVisibility()
+    const [ball2, isball2Visible] = UseElementVisibility()
+    const [ball3, isball3Visible] = UseElementVisibility()
+    const [ball4, isball4Visible] = UseElementVisibility()
+    const [ball5, isball5Visible] = UseElementVisibility()
+    const [ball6, isball6Visible] = UseElementVisibility()
     return (
         <>
-        <motion.div 
-        
-        ref={ballRef}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-            transition={{
-              duration: 0.4,
-              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-            }}
+        <div 
         className="flex flex-col justify-center h-[vh] ">
   <div>
     <div className=" w-fit fixed border-b-2 bg-white  ">
@@ -84,31 +55,64 @@ export const Whyus = () => {
             Login
           </motion.button>
         </div>
-
       </div>
     </div>
     </div>
  
 
-     <div className="w-60 border rounded-md mt-35 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110 ">
+     <motion.div
+      ref={ball1}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={isball1Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+      transition={{
+        duration: 1,
+        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+      }}
+      
+     className="w-60 border rounded-md mt-35 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110 ">
        <p>Trusted by 1.5M code learners</p>
-     </div>
-   <div className='flex flex-col justify-center ml-56'>
+     </motion.div>
+   <motion.div 
+    ref={ball2}
+    initial={{ opacity: 0, scale: 0 }}
+    animate={isball2Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+    transition={{
+      duration: 1,
+      scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+    }}
+    
+   className='flex flex-col justify-center ml-56'>
    {/* <div className="w-8xl  pl-5 mt-3 "> */}
       <div className='font-stretch-150% text-7xl'>Consistency and Community </div>
       <div className='mt-8 font-medium text-3xl '>An unmatched learning experience for coding courses</div>
     {/* </div> */}
-   </div>
-     <div className="mt-8 ml-100 text-xl flex flex-col items-start">
+   </motion.div>
+     <motion.div 
+      ref={ball3}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={isball3Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+      transition={{
+        duration: 1,
+        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+      }}
+      
+     className="mt-8 ml-100 text-xl flex flex-col items-start">
       <p className="">Content is everywhere, we provide a learning </p>
        <p> experience that is unmatched. Bounties, peer learning </p>
        <p> peer code reviews, Virtual hostel, Alumni Network, Doubt sessions,</p>
         <p> Group projects and so many other activities to keep you on track. </p> 
      
-     </div>
+     </motion.div>
 
-  
-  <div className="flex w-110 gap-4 h-20 py-4 pl-6 mt-12 ml-130 text-4xl border-2 rounded-lg border-amber-400 shadow-lg transition-all duration-700 hover:scale-110">
+  <motion.div 
+   ref={ball4}
+   initial={{ opacity: 0, scale: 0 }}
+   animate={isball4Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+   transition={{
+     duration: 1,
+     scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+   }}
+  className="flex w-110 gap-4 h-20 py-4 pl-6 mt-12 ml-130 text-4xl border-2 rounded-lg border-amber-400 shadow-lg transition-all duration-700 hover:scale-110">
       <p>Check all Live Cohorts</p>
       <div className="flex items-center gap-2">
   <span className="relative flex h-3 w-3">
@@ -117,20 +121,38 @@ export const Whyus = () => {
   </span>
 </div>
 
-  </div>
+  </motion.div>
 
-  <div className='ml-115 pt-4 '>
+  <motion.div 
+   ref={ball5}
+   initial={{ opacity: 0, scale: 0 }}
+   animate={isball5Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+   transition={{
+     duration: 1,
+     scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+   }}
+   
+  className='ml-115 pt-4 '>
 <ReactPlayer width={550} height={300} controls={true} playing={true} light={true} url='https://youtu.be/RDagRV7ueMI?si=uckG58qqU_Y5BxMT' />
-</div>
+</motion.div>
 
-<div>
+<motion.div 
+ ref={ball6}
+ initial={{ opacity: 0, scale: 0 }}
+ animate={isball6Visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+ transition={{
+   duration: 1,
+   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+ }}
+ 
+>
   <div className='ml-56 mt-20'>
     <p className='text-2xl'>Love that we get from our community</p>
     <p className='text-4xl mt-3 font-medium'>Tweet Love</p>
   </div>
 
-</div>
-    </motion.div>
+</motion.div>
+    </div>
         </>
     )
 }
