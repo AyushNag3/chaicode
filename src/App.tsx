@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Whyus } from './components/whyussection'
 import { TwitterCard } from './components/twittercard'
+import { Cohort } from './components/cohorts'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <div className='max-h-[700vh]'>
         <Whyus/>
         <TwitterCard></TwitterCard>
+        <Cohort></Cohort>
       </div>
      
     </>

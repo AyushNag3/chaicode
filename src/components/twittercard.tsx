@@ -78,10 +78,6 @@ export const TwitterCard = () => {
   className='w-100 h-28 ml-140 mt-10 mb-6 border rounded-lg border-amber-400 text-2xl p-4 shadow-lg transition-all duration-700 hover:scale-110'>
     <p className='mt-5'>Join Cohorts Live Classes</p> 
 </motion.div> 
-    
-  
-
-
         </>
     )
 }

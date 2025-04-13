@@ -129,11 +129,6 @@ export const Whyus = () => {
     <p className='text-4xl mt-3 font-medium'>Tweet Love</p>
   </div>
 
-<div className='dark'>
-
-
-</div>
-
 </div>
     </motion.div>
         </>
