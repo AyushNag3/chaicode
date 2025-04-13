@@ -1,12 +1,53 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { motion } from 'motion/react'
+import { useState , useRef, useEffect} from 'react'
+
 
 export const Whyus = () => {
 
+  const [isVisible, setIsVisible] = useState(false)
+    const ballRef = useRef(null)
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          // Update state based on whether the ball is visible
+          entries.forEach((entry) => {
+            setIsVisible(entry.isIntersecting)
+          })
+        },
+        {
+          threshold: 0.2, // Trigger when at least 20% of the element is visible
+        },
+      )
+      // Start observing the ball element
+      if (ballRef.current) {
+        observer.observe(ballRef.current)
+      }
+
+      return () => {
+        if (ballRef.current) {
+          observer.unobserve(ballRef.current)
+        }
+      }
+    }, [])
+
+
     return (
         <>
-        <div className="flex flex-col justify-center h-[vh] ">
-          <nav className="w-fit border-b bg-white ">
+        <motion.div 
+        
+        ref={ballRef}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+        
+        className="flex flex-col justify-center h-[vh] ">
+    <nav className="w-fit border-b bg-white ">
       <div className=" px-6 flex  justify-around pb-2">
         
 
@@ -40,8 +81,9 @@ export const Whyus = () => {
 
       </div>
     </nav>
+ 
 
-     <div className="w-60 border rounded-md mt-10 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110">
+     <div className="w-60 border rounded-md mt-20 ml-155 py-2 px-0 shadow-lg transition-all duration-700 hover:scale-110">
        <p>Trusted by 1.5M code learners</p>
      </div>
    <div className='flex flex-col justify-center ml-56'>
@@ -87,7 +129,7 @@ export const Whyus = () => {
 </div>
 
 </div>
-    </div>
+    </motion.div>
         </>
     )
 }
