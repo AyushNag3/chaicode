@@ -44,6 +44,7 @@ export const Cohort = () => {
     <div className="col-span-1 border-1 flex flex-col h-150 border-black rounded-lg w-[400px] text-white bg-black">
       <Live></Live>
         <ReactPlayer width={399} height={300} controls={true} playing={true} light={true} url='https://youtu.be/Kjd-SWpe1do' />
+        <div className='pl-1'>
         <p className='text-2xl font-bold text-left'>Full Stack Data Science 1.0</p>
         <p className='text-1xl font-light text-left mb-3'>From Python basics to project deployment</p>
         <span className= "flex gap-1">
@@ -52,14 +53,16 @@ export const Cohort = () => {
         <MdOutlineTimer className='mt-[2px] text-md'></MdOutlineTimer>
         <p className='text-sm'>6 months</p>
         </span>
+        </div>
         <Price currentPrice={6999} originalPrice={8999}/>
         <div className='text-xs text-start ml-1 mb-3 text-orange-400'>Save 38%</div>
         <Button className=' mb-1 mx-1 bg-gradient-to-r from bg-orange-500 to bg-amber-600 hover:bg-amber-700 hover:cursor-pointer'>Learn More</Button>
+        
     </div>
     <div className="col-span-1 border-1 flex flex-col border-black rounded-lg w-[400px] text-white bg-black">
         <Live></Live>
         <ReactPlayer width={399} height={300} controls={true} playing={true} light={true} url='https://youtu.be/VNb_LawBBWU' />
-        
+        <div className='pl-1'>
         <p className='text-2xl font-bold text-left line-clamp-1'>GenAI with Python | Concept to Deployment Projects 1.0</p>
         <p className='text-1xl font-light text-left mb-3'>Development Side of AI Application</p>
         <span className= "flex gap-1">
@@ -68,6 +71,7 @@ export const Cohort = () => {
         <MdOutlineTimer className='mt-[2px] text-md'></MdOutlineTimer>
         <p className='text-sm'>1-2 months</p>
         </span>
+        </div>
         <Price currentPrice={4999} originalPrice={7999}/>
         <div className='text-xs text-start ml-1 mb-3 text-orange-400'>Save 38%</div>
         <Button className=' mb-1 mx-1 bg-gradient-to-r from bg-orange-500 to bg-amber-600 hover:bg-amber-700 hover:cursor-pointer'>Learn More</Button>
@@ -75,6 +79,7 @@ export const Cohort = () => {
     <div className="col-span-1 border-1 flex flex-col border-black rounded-lg w-[400px] text-white bg-black">
         <Live></Live>
         <ReactPlayer width={399} height={300} controls={true} playing={true} light={true} url='https://youtu.be/oBLpqSHc3lA' />
+        <div className='pl-1'>
         <p className='text-2xl font-bold text-left'>Full Stack Data Science 1.0</p>
         <p className='text-1xl font-light text-left mb-3'>From Python basics to project deployment</p>
         <span className= "flex gap-1">
@@ -83,6 +88,7 @@ export const Cohort = () => {
         <MdOutlineTimer className='mt-[2px] text-md'></MdOutlineTimer>
         <p className='text-sm'>1-2 months</p>
         </span>
+        </div>
         <Price currentPrice={4999} originalPrice={7999}/>
         <div className='text-xs text-start ml-1 mb-3 text-orange-400'>Save 38%</div>
         <Button className=' mb-1 mx-1 bg-gradient-to-r from bg-orange-500 to bg-amber-600 hover:bg-amber-700 hover:cursor-pointer'>Learn More</Button>
