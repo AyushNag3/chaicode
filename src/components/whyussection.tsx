@@ -13,18 +13,17 @@ export const Whyus = () => {
     const [ball4, isball4Visible] = UseElementVisibility()
     const [ball5, isball5Visible] = UseElementVisibility()
     const [ball6, isball6Visible] = UseElementVisibility()
+    const [border, isborderVisible] = UseElementVisibility()
     return (
         <>
         <div 
         className="flex flex-col justify-center h-[vh] ">
-  <div>
-    <div className=" w-fit fixed border-b-2 bg-white  ">
+  <div className=''>
+    <header className=" fixed w-fit bg-white h-23 z-5 ">
       <div className=" px-6 flex  justify-around pb-2">
-
         <div className="text-3xl text-gray-800 mr-100 pt-4">
           ChaiCode
         </div>
-      
         <div className="flex flex-row items-center gap-20 pt-2 pr-5 text-lg font-semibold ">
           <div className="relative inline-flex items-center font-semibold text-gray-600 hover:text-gray-900 hover:cursor-pointer">
             Cohorts
@@ -51,12 +50,22 @@ export const Whyus = () => {
             whileTap={{
               scale : [0.90,1.1]
             }} 
-           className=" bg-slate-100 rounded-lg hover:bg-slate-200 hover:cursor-pointer ml-80 mt-6">
+           className=" rounded-lg bg-gradient-to-r from bg-amber-500 to bg-orange-400 hover:cursor-pointer ml-80 mt-8">
             Login
           </motion.button>
         </div>
       </div>
-    </div>
+      <motion.span 
+      ref = {border}
+      initial = {{
+          width : 0 
+      }}
+      animate = {
+        isborderVisible ? { width: "100%" } : { width: 0 }
+      }
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from bg-amber-500 to bg-yellow-400"></motion.span>
+    </header>
     </div>
  
 
